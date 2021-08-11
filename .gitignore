@@ -1,19 +1,33 @@
 backend/node_modules
+backend/db-data
 
-frotend/node_modules
-frotend/.pnp
-frotend/.pnp.js
+frontend/node_modules
 
-frotend/coverage
+frontend/.pnp
+frontend/.pnp.js
 
-frotend/build
+frontend/coverage
 
-frotend/.DS_Store
-frotend/.env.local
-frotend/.env.development.local
-frotend/.env.test.local
-frotend/.env.production.local
+frontend/build
 
-frotend/npm-debug.log*
-frotend/yarn-debug.log*
-frotend/yarn-error.log*
+frontend/.DS_Store
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+
+mobile/node_modules
+mobile/.DS_Store
+mobile/.expo/
+mobile/npm-debug.*
+mobile/*.jks
+mobile/*.p8
+mobile/*.p12
+mobile/*.key
+mobile/*.mobileprovision
+mobile/*.orig.*
+mobile/web-build/

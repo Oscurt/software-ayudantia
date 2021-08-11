@@ -1,5 +1,7 @@
 # Guia GIT
 
+[Volver](https://github.com/Oscurt/software-ayudantia)
+
 ## Instalar
 
 - [Windows][win]
@@ -37,3 +39,7 @@ Si ya existe el repositorio git simplemente usaremos:
     git branch -M main
     git push -u origin main
 ```
+
+[win]: <https://git-scm.com/download/win>
+[mac]: <https://git-scm.com/download/mac>
+[linux]: <https://git-scm.com/download/linux>

@@ -8,32 +8,21 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     volumes:
-      - ./backend/db-data/sql:/docker-entrypoint-initdb.d/
+      - ./backend/db-model:/docker-entrypoint-initdb.d/
+      - ./backend/db-data://var/lib/postgresql/data
     ports:
       - "5432:5432"
-  dbnosql:
-    image: mongo:5.0.2
-    restart: always
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: mongo
-      MONGO_INITDB_ROOT_PASSWORD: mongo
-    volumes:
-      - ./backend/db-data/nosql:/docker-entrypoint-initdb.d/
-    ports:
-      - "27017:27017"
   backend:
     build:
       context: ./backend/
       dockerfile: Dockerfile 
     depends_on:
       - dbsql
-      - dbnosql
     environment:
       POSTGRES_DB: postgres
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-      MONGO_INITDB_ROOT_USERNAME: mongo
-      MONGO_INITDB_ROOT_PASSWORD: mongo
+      POSTGRES_HOST: dbsql
     restart: always
     ports:
       - "3000:3000"
@@ -44,7 +33,6 @@ services:
     #depends_on:
      # - backend
       #- dbsql
-      #- dbnosql
     #restart: always
     #ports:
      # - "80:8080"

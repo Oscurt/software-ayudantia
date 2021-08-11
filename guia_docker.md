@@ -1,0 +1,31 @@
+# Guia Docker
+
+[Volver](https://github.com/Oscurt/software-ayudantia)
+
+## Instalar
+
+- [Video pro][https://www.youtube.com/watch?v=CV_Uf3Dq-EU]
+- [Windows][https://docs.docker.com/docker-for-windows/install/]
+- [MacOS][https://docs.docker.com/docker-for-mac/install/]
+- [Ubuntu][https://docs.docker.com/engine/install/ubuntu/]
+
+En el caso de windows y macOS podemos instalar la version desktop que provee docker, este tiene un instalador simple para el caso de ubuntu se deben ejecutar los siguientes comandos del link adjuntado.
+
+Para ubuntu debemos instalar docker-compose para el uso de los archivos de este repositorio.
+
+- [docker compose][https://docs.docker.com/compose/install/]
+
+## Comandos
+
+- docker build: Sirve para crear una imagen a partir de un dockerfile, para ello podemos usar el argumento -t para darle un nombre y debemos especificar la ruta del dockerfile.
+- docker run: Sirve para crear un contenedor a partir de una imagen, podemos usar el comando -it para la interactividad o -d para ejecutar en modo demonio, ademas debemos especificar el nombre de la imagen a utilizar.
+- docker ps: Sirve para listar los contenedores encendidos, podemos usar -a para listar todos los contenedores.
+- docker images: Sirve para listar las imagenes.
+
+Los siguientes comandos se debe especificar el contenedor a utilizar (ya sea nombre o id).
+
+- docker start: Sirve para iniciar/prender un contendor.
+- docker stop: Sirve para detener/apagar un contenedor.
+- docker exec: Sirve para ejecutar un "programa" de un contenedor.
+- docker rm: Sirve para eliminar un contenedor.
+- docker rmi: Sirve para eliminar una imagen.
