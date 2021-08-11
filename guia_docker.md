@@ -9,11 +9,33 @@
 - [MacOS][https://docs.docker.com/docker-for-mac/install/]
 - [Ubuntu][https://docs.docker.com/engine/install/ubuntu/]
 
-En el caso de windows y macOS podemos instalar la version desktop que provee docker, este tiene un instalador simple para el caso de ubuntu se deben ejecutar los siguientes comandos del link adjuntado.
+En el caso de windows y macOS podemos instalar la version desktop que provee docker, este tiene un instalador simple para el caso de ubuntu se deben ejecutar los siguientes comandos:
+
+```sh
+    sudo apt-get update
+    sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+    echo \
+    "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+    $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+    sudo apt-get update
+    sudo apt-get install docker-ce docker-ce-cli containerd.io
+```
 
 Para ubuntu debemos instalar docker-compose para el uso de los archivos de este repositorio.
 
 - [docker compose][https://docs.docker.com/compose/install/]
+
+```sh
+    sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+    sudo chmod +x /usr/local/bin/docker-compose
+    sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+```
 
 ## Comandos
 
