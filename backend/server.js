@@ -1,8 +1,10 @@
 const express = require("express");
 const pool = require("./db");
 const app = express();
+const cors = require('cors');
 const port = 3000;
 
+app.use(cors());
 app.use(express.json());
 
 app.get("/", async (req, res) => {
@@ -29,7 +31,7 @@ app.post("/register", async (req, res) => {
 
 app.post("/login", async (req, res) => {
   const { user, pass } = req.body;
-  const getUser = await pool.query("SELECT id FROM Usuario where usuario = $1::text", [user]);
+  const getUser = await pool.query("SELECT id FROM Usuario where usuario = $1::text AND clave = $2::text", [user, pass]);
   if (getUser.rows.length){
     res.json({
       status: 1,

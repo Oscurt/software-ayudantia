@@ -9,7 +9,7 @@ services:
       POSTGRES_PASSWORD: postgres
     volumes:
       - ./backend/db-model:/docker-entrypoint-initdb.d/
-      - ./backend/db-data://var/lib/postgresql/data
+      - ./backend/db-data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
   backend:
@@ -34,6 +34,9 @@ services:
      # - backend
       #- dbsql
     #restart: always
+    #volumes:
+     # - ./frontend/public:/home/node/public
+      #- ./frontend/src:/home/node/src
     #ports:
-     # - "80:8080"
+     # - "80:3000"
     
